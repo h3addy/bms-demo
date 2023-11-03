@@ -1,0 +1,29 @@
+.card-container {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  color: #000;
+}
+
+.movie-image-wrapper {
+  position: relative;
+}
+
+.movie-image-wrapper .like-wrapper {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #000;
+  color: #fff;
+}
+
+.movie-name-wrapper {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.movie-uacategory-wrapper,
+.movie-language-wrapper {
+  color: #515050;
+}

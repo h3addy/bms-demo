@@ -1,0 +1,13 @@
+.listing-wrapper {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-wrapper {
+  display: flex;
+}
+
+.thumbnail {
+}

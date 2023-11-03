@@ -1,0 +1,14 @@
+.listing-wrapper {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.listing-wrapper li {
+  list-style: none;
+}
+
+.listing-wrapper li:not(:nth-child(1)) {
+  margin-left: 1rem;
+}
