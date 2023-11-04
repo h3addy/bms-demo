@@ -3,7 +3,6 @@ import SearchBar from "../components/SearchBar";
 import { data, languages } from "../data";
 import LanguageSelection from "../components/LanguageSelection";
 import MovieCard from "../components/MovieCard";
-import "../styles/MoviePages.css";
 
 type MovieType = {
   id: number;
@@ -50,19 +49,19 @@ const MoviesPage = () => {
   };
 
   return (
-    <div className="movie-listing-wrapper flex bg-[#000]">
-      <div className="listing-header">
-        <p>Movies in Mumbai</p>
+    <div className="movie-listing-wrapper flex flex-col items-start justify-center bg-[#F5F5F5] gap-8 p-6 w-4/5">
+      <div className="listing-header flex justify-between items-center w-full">
+        <p className="text-xl font-medium">Movies in Mumbai</p>
         <SearchBar searchedValue={searchVal} handleSearch={handleSearch} />
       </div>
-      <div className="language-selection-wrapper">
+      <div className="language-selection-wrapper flex flex-wrap items-center justify-start w-ful">
         <LanguageSelection
           listOfLanguages={languages}
           selectedLanguages={selectedLanguages}
           handleSelection={handleLanguageFilter}
         />
       </div>
-      <div className="movies-listing-container">
+      <div className="movies-listing-container grid grid-cols-4 gap-8">
         {listData.length === 0 ? (
           <div>{emptyMessage}</div>
         ) : (

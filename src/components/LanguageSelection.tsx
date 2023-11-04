@@ -1,5 +1,7 @@
+import clsx from "clsx";
 import FilterButton from "./FilterButton";
-import "../styles/LangaugeSelection.css";
+// import "../styles/LangaugeSelection.css";
+
 type IProps = {
   listOfLanguages: string[];
   selectedLanguages: string[];
@@ -19,16 +21,23 @@ const LanguageSelection: React.FC<IProps> = ({
         const filterVal = selectedLanguages.filter((d: string) => d !== val);
         handleSelection(filterVal);
       } else {
-        handleSelection([...selectedLanguages, val]);
+        handleSelection([val, ...selectedLanguages]);
       }
     }
   };
 
   return (
-    <ul className="listing-wrapper">
+    <ul className="listing-wrapper flex items-center justify-start">
       {listOfLanguages.map((d: string, i: number) => (
-        <li key={`${d.toLowerCase()}_${i}`}>
-          <FilterButton label={d} handleClick={handleLocalSelection} />
+        <li
+          key={`${d.toLowerCase()}_${i}`}
+          className={clsx(i === 0 ? "" : "ml-4")}
+        >
+          <FilterButton
+            label={d}
+            handleClick={handleLocalSelection}
+            isSelected={selectedLanguages.includes(d)}
+          />
         </li>
       ))}
     </ul>
