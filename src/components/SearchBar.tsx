@@ -1,4 +1,5 @@
-import "../styles/SearchBar.css";
+// import "../styles/SearchBar.css";
+
 type IProps = {
   searchedValue: string;
   handleSearch: (val: string) => void;
@@ -12,11 +13,11 @@ const SearchBar: React.FC<IProps> = ({
     handleSearch(input);
   };
   return (
-    <div className="serach-wrapper">
+    <div className="serach-wrapper  w-1/3">
       <input
         type="text"
         placeholder="Search..."
-        className="search-input"
+        className="search-input w-full border border-[##494949] rounded-2xl p-1"
         value={searchedValue}
         onChange={handleLocalSearch}
       />
